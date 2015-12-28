@@ -1,0 +1,94 @@
+% Customizations for bib v1
+% Suppress "In: "
+%\renewbibmacro{in:}{} 
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+
+% Strip formatting on title
+\DeclareFieldFormat{title}{#1}
+\DeclareFieldFormat
+  [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+  {title}{#1}
+
+% Strip formatting on journal
+\DeclareFieldFormat{journaltitle}{#1}
+\DeclareFieldFormat
+  [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+  {journaltitle}{#1}
+
+% No parens on the year
+\usepackage{xpatch,filecontents}
+\xpatchbibmacro{date+extrayear}{%
+  \printtext[parens]%
+}{%
+  \setunit*{\addperiod\space}%
+  \printtext%
+}{}{}
+
+% To format the volume and number as "#vol (#nr)".
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+  \setunit*{\addspace}%
+  \printfield[parens]{number}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}}
+
+% Suppress pp. before pages
+\DeclareFieldFormat[article]{pages}{#1}%
+
+% Customizations for bib v2 (self-contained)
+% Suppress "In: "
+%\renewbibmacro{in:}{} 
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+
+% Strip formatting on title
+\DeclareFieldFormat{title}{#1}
+\DeclareFieldFormat
+  [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+  {title}{#1}
+
+% Strip formatting on journal
+\DeclareFieldFormat{journaltitle}{#1}
+\DeclareFieldFormat
+  [article,inbook,incollection,inproceedings,patent,thesis,unpublished]
+  {journaltitle}{#1}
+
+% To format the volume and number as "#vol(#nr):".
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+%  \setunit*{\addspace}%
+  \printfield[parens]{number}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}
+  \setunit{\addcolon\space}}%
+
+% Suppress pp. before pages
+\DeclareFieldFormat[article]{pages}{#1}%
+
+% No parens on the year
+\usepackage{xpatch,filecontents}
+\xpatchbibmacro{issue+date}{%
+  \printtext[parens]%
+}{%
+%  \setunit*{\addperiod\space}%
+  \printtext%
+}{}{}
+
+%
+\renewbibmacro*{journal+issuetitle}{%
+  \usebibmacro{journal}%
+  \setunit*{\addspace}%
+  \iffieldundef{series}
+    {}
+    {\newunit
+     \printfield{series}%
+     \setunit{\addspace}}%
+  \setunit{\addspace}%
+  \usebibmacro{issue+date}%
+  \setunit{\addcolon\space}%
+  \usebibmacro{issue}%
+  \setunit{\addsemicolon\space}%
+  \usebibmacro{volume+number+eid}%  
+  \newunit}
+

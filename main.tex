@@ -1,0 +1,416 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 2.0 (24/8/15)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.0 major modifications by:
+% Vel (vel@latextemplates.com)
+% Johannes Bottcher
+%
+% Original authors:
+% Steven Gunn  (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+12pt, % The default document font size, options: 10pt, 11pt, 12pt
+oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+doublespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+parskip, % Uncomment to add space between paragraphs
+cmyk
+]{MastersDoctoralThesis} % The class file specifying the document structure
+
+%\usepackage[utf8]{inputenc} % Required for inputting international characters
+%\usepackage[T1]{fontenc} % Output font encoding for international characters
+%\usepackage{newtxtext, newtxmath} % Use the Palatino font by default
+%\usepackage{palatino}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{textcomp}
+
+%\usepackage{microtype}
+\usepackage{fontspec}
+\setmainfont[
+  Ligatures=TeX,
+  BoldFont=timesbd.ttf,
+  ItalicFont=timesi.ttf,
+  BoldItalicFont=timesbi.ttf
+]{times.ttf}
+\setsansfont[
+  Ligatures=TeX,
+  BoldFont=LinBiolinum_RB.otf,
+  ItalicFont=LinBiolinum_RI.otf
+]{LinBiolinum_R.otf}
+\setmonofont{LinLibertine_M.otf}
+
+%  maxnames=6,minnames=6,citereset=chapter
+% \usepackage[backend=biber,
+%			style=numeric-comp,
+%            natbib=true]
+%           {biblatex} 
+
+\usepackage[style=numeric-comp,
+			sorting=none,
+            maxnames=6,
+            minnames=6,
+            firstinits=true,
+            terseinits=true,
+            abbreviate=false,
+            backend=biber,
+            citereset=chapter,
+            refsection=chapter]{biblatex}
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+\addbibresource{References.bib} % The filename of the bibliography
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+\usepackage{booktabs,longtable,tabu}
+%\usepackage[format=plain,justification=justified,font=small,labelfont=sc]{caption}
+\captionsetup[longtable]{aboveskip=0pt}
+\usepackage{ctable}
+\usepackage{setspace}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{tikz}
+\usepackage{makecell}
+\renewcommand\theadfont{\bfseries}
+\usepackage[referable]{threeparttablex}
+
+\newcommand{\blap}[1]{\smash[b]{\begin{tabular}[t]{@{}c@{}}#1\end{tabular}}}
+
+
+\usepackage{array}
+\renewcommand{\arraystretch}{1.5}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\usepackage{multirow,bigdelim}
+\usepackage{scalerel}
+
+\usepackage{titlesec}
+\newenvironment{alttitles}{
+\titleformat{\chapter}[display] % command + shape
+	{\normalfont \Large \filcenter \rmfamily} % format
+	{\vspace*{\fill} \titlerule[1pt] \vspace{1pt} \titlerule \vspace{1pc}
+		 \LARGE\MakeUppercase{\chaptertitlename}~\thechapter}% label
+	{1pc}% separation
+	{\titlerule \Huge} % before
+	[\vspace*{\fill} \thispagestyle{empty} \clearpage \addtocounter{page}{-1}]% after
+
+  
+ \titleformat{\section}
+  {\normalfont\rmfamily\bfseries}
+  {\thesection}{1em}{}
+  
+  \titleformat{\subsection}
+  {\normalfont\rmfamily\bfseries}
+  {\thesubsection}{1em}{}
+  
+  \titleformat{\subsubsection}
+  {\normalfont\rmfamily\bfseries}
+  {\thesubsubsection}{1em}{}
+  
+  \titleformat{\paragraph}[hang]
+  	{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+
+  \titleformat{\subparagraph}[hang]
+  	{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+
+ \titlespacing*{\section}
+  {0pt}{0.1em}{0.1em}
+ \titlespacing*{\subsection}
+  {0pt}{0.1em}{0.1em}
+ \titlespacing*{\subsubsection}
+  {0pt}{0.1em}{0.1em}
+ \titlespacing*{\paragraph}
+  {0pt}{0.1em}{0.1em}
+ \titlespacing*{\subparagraph}
+  {0pt}{0.1em}{0.1em}
+}
+
+\usepackage[toc]{appendix}
+\newenvironment{apndxtitles}{
+\titleformat{\chapter}[display] % command + shape
+	%{\bfseries \fontspec[Numbers={OldStyle}]{Linux Libertine O}} % format
+  {\bfseries} % format
+	{\filleft \large\MakeUppercase{\chaptertitlename}~\huge\thechapter}% label
+	{-18pt}% separation
+	{\Huge} % before
+  [\thispagestyle{plain}] % after
+\titlespacing*{\chapter}{0pt}{-60pt}{5pt}
+}	 
+
+\usepackage{float}
+\usepackage[capitalise,noabbrev]{cleveref}
+\usepackage{url}
+\urlstyle{same}
+\def\UrlBreaks{\do\/\do-}
+\usepackage{easylist}
+%\usepackage{xcolor}
+
+
+%for image size lock
+\usepackage[export]{adjustbox}
+\usepackage{enumitem}
+\pdfpxdimen=1in
+\divide\pdfpxdimen by 300
+
+%\usepackage{tocloft}
+% \setlength{\cftparskip}{0pt}
+% \setlength{\cftbeforechapskip}{4pt}
+% \setlength{\cftbeforesecskip}{2pt}
+\makeatletter
+  \renewcommand{\@pnumwidth}{3em}
+  \renewcommand{\@tocrmarg}{4.5em}
+\makeatother
+\usepackage{quoting}
+
+%\usepackage[cmyk]{xcolor}
+\definecolor{black}{cmyk}{0,0,0,1}
+%\definecolor{CoolBlack}{cmyk}{.3,0,0,1}
+%\definecolor{richblack}{cmyk}{.4,.3,.3,1}
+%\color{black}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+\thesistitle{A study on transcription factors \textit{TBX1}, \textit{NKX2.5} and variants of folate \\ metabolism genes in conotruncal heart defects} % Your thesis title, this is used in the title and abstract, print it elsewhere with \ttitle
+\supervisor{Dr. Solomon FD Paul} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+\degree{Doctor of Philosophy} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{Teena Koshy} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+
+\subject{Human Genetics} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{{Sri Ramachandra University}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\department{{Department of Human Genetics}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{{}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{{Faculty of Biomedical Sciences, Technology and Research}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\textsc{\LARGE \univname}\\[1.5cm] % University name
+\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+
+\HRule \\[0.4cm] % Horizontal line
+{\huge \bfseries \ttitle}\\[0.4cm] % Thesis title
+\HRule \\[1.5cm] % Horizontal line
+ 
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+\authorname % Author name - remove the \href bracket to remove the link
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+\href{http://www.jamessmith.com}{\supname} % Supervisor name - remove the \href bracket to remove the link  
+\end{flushright}
+\end{minipage}\\[3cm]
+ 
+\large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of \degreename}\\[0.3cm] % University requirement text
+\textit{in the}\\[0.4cm]
+\deptname\\[2cm] % Research group name and department name
+ 
+{\large \today}\\[4cm] % Date
+%\includegraphics{Logo} % University/department logo - uncomment to place it
+ 
+\vfill
+\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	Acknowledgement PAGE
+%----------------------------------------------------------------------------------------
+
+%\section*{Acknowledgement}
+%\input{Chapters/Acknowledgement}
+%\clearpage
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+%\begin{abstract}
+%\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
+
+%\input{Chapters/Abstract}
+
+%\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+%\tableofcontents % Prints the main table of contents
+%\cleardoublepage
+
+%\listoffigures   % Prints the list of figures
+%\cleardoublepage
+
+%\listoftables    % Prints the list of tables
+%\cleardoublepage
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+%{\small
+%\begin{abbreviations}{>{\bfseries}ll} % Include a list of abbreviations (a table of two columns)
+%AAIDD & American Association on Intellectual and Developmental Disabilities \\
+%ADHD & Attention-deficit Hyperactivity Disorder \\
+%APA & American Psychiatry Association \\
+%APGAR & Appearance, Pulse, Grimace, Activity, Respiration \\
+%ASD & Atrial Septal Defect \\
+%bp & base pairs \\
+%bphs & bands per haploid set \\
+%CBS & Center for Biological Sequence analysis \\
+%CDC & Centers for Disease Control and Prevention  \\
+%CGH & Comparative Genomic Hybridization \\
+%CNS & Central Nervous System \\
+%CMA & Chromosome Microarray \\
+%CT & Computerized Tomography \\
+%Ct & Threshold cycle \\
+%DAPI & 4',6-diamidino-2-phenylindole \\
+%DMSO & Dimethyl Sulfoxide \\
+%DNA & Deoxyribo Nucleic Acid \\
+%dNTP & Deoxy Nucleotide Triphosphate \\
+%DQ & Developmental Quotient \\
+%DSM & Diagnostic and Statistical Manual of Mental Disorders \\
+%EDTA & Ethylenediaminetetraacetic acid \\
+%EEG & Electroencephalography \\
+%FAS & Fetal Alcohol Syndrome \\
+%FBS & Fetal Bovine Serum \\
+%FISH & Fluorescence \textit{in situ} Hybridization \\
+%FXS & Fragile X Syndrome \\
+%GCBS & Gesell Children's Behavior Schedule \\
+%GDD & Global Developmental Delay \\
+%GTG & G-banding with Trypsin and Giemsa \\
+%HBSS & Hank’s Balanced Salt Solution \\
+%HRB & High Resolution Banding \\
+%ICD & International Classification of Diseases \\
+%ICF & International Classification of Functioning, Disability and Health \\
+%ID & Intellectual Disability \\
+%IEC & Institutional Ethics Committee \\
+%IQ & Intelligence Quotient \\
+%IUGR & Intra-uterine Growth Retardation \\
+%kb & kilo base pairs \\
+%MAPH & Multiplex Amplifiable Probe Hybridization \\
+%Mb & Mega base pairs \\
+%MLPA & Multiplex Ligation-dependent Probe Amplification \\
+%MRI & Magnetic Resonance Imaging \\
+%NCBI & National Center for Biotechnology Information \\
+%NGS & Next Generation Sequencing \\
+%NTD & Neural Tube Defect \\
+%OMIM & Online Mendelian Inheritance in Man \\
+%PBL & Perpheral Blood Lymphocytes \\
+%PBS & Phosphate Buffered Saline \\
+%PCR & Polymerase Chain Reaction \\
+%PHA & Phytohemagglutinin \\
+%PRINS & Primed \textit{in situ} Labeling \\
+%PWS & Prader-Willi Syndrome \\
+%qPCR & Quantitative Polymerase Chain Reaction \\
+%QMPSF & Quantitative Multiplex PCR of Short Fluorescent fragments \\
+%RPMI & Rosswell Park Memorial Institute \\
+%SSC & Saline Sodium Citrate \\
+%TAE & Tris-Acetic acid-EDTA \\
+%UCSC & University of California, Santa Cruz \\
+%VABS & Vineland Adaptive Behavior Scale \\
+%WBS & Williams-Beuren Syndrome \\
+%WHO & World Health Organization \\
+%WHS & Wolf-Hirschhorn Syndrome \\
+%WHSCR & Wolf-Hirschhorn Syndrome Critical Region \\
+%\end{abbreviations}}
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Cutomizations to have chapter name listed in its own page
+%
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+\begin{alttitles}
+%\input{Chapters/Chapter1}
+%\input{Chapters/Chapter2} 
+%\input{Chapters/Chapter3}
+\input{Chapters/Chapter4} 
+%\input{Chapters/Chapter5}
+%\input{Chapters/Chapter6}
+%\input{Chapters/Summary}
+\end{alttitles}
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+%\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+%\begin{appendices}
+%\begin{apndxtitles}
+%\fancypagestyle{plain}{%
+%    \fancyhf{}
+%    \renewcommand{\headrulewidth}{0pt}
+%    \cfoot{\footnotesize\rmfamily\textsc{\fontspec[Numbers={OldStyle}]{Linux Libertine O}\ttitle}}
+%   \rfoot{\rmfamily\fontspec[Numbers={OldStyle}]{LinLibertine_R.otf}\thepage}
+%    }
+%\input{Appendices/AppendixA}
+%\input{Appendices/AppendixB}
+%\input{Appendices/AppendixC}
+%\end{apndxtitles}
+%\end{appendices}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+%\printbibliography[heading=bibintoc]
+%\printbibliography
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

@@ -1,0 +1,98 @@
+\pagestyle{empty}
+\afterpage{%
+    \clearpage% Flush earlier floats (otherwise order might not be correct)
+    \begin{landscape}% Landscape page
+    \centering % Center table
+%	\tabulinesep=1mm
+	\begin{spacing}{0.7}
+    \begin{longtable}{p{1in} p{1in} p{4.25in} p{2.75in}}
+	%\begin{longtable}{p{.8in} p{.6in} p{2in} p{1.6in}}
+
+		% Caption
+	    \caption{\textbf{Some of the monogenic causes of ID}} \\
+    
+    	% Define first head
+		\toprule
+		\textbf{Gene} & \textbf{Locus} & \textbf{Function of encoded protein} & \textbf{Phenotype} \\ \midrule
+    	\endfirsthead
+    
+	    % Define repeating head
+    	\multicolumn{4}{c}{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+	    \toprule
+		\textbf{Gene} & \textbf{Locus} & \textbf{Function of encoded protein} & \textbf{Phenotype} \\ \midrule
+		\endhead
+    
+    	% Define repeating foot
+	    %\bottomrule
+	    \multicolumn{4}{r}{\textit{Continued on next page}} \\
+		\endfoot
+    
+    	% Define last foot
+	    \bottomrule
+    	\endlastfoot
+    
+	\multicolumn{4}{l}{\bfseries~Genes involved in neurogenesis} \\ \midrule
+	\textit{MCPH1} & 8p22 & Cell cycle control and DNA repair & Microcephaly vera \\ \midrule
+	\textit{CDK5RAP2} & 9q33.2 & Mitotic spindle function in embryonic neuroblasts & Microcephaly vera \\ \midrule
+	\textit{ASPM} & 1q31 & Mitotic spindle formation during mitosis and meiosis & Microcephaly vera \\ \midrule
+	\textit{CENPJ} & 13q12.2 & Localization to the mitotic spindle poles of mitotic cells & Microcephaly vera \\ \midrule
+	
+    \multicolumn{4}{l}{\bfseries~Genes involved in neuronal migration} \\ \midrule    
+	\textit{LIS1} & 17p13.3 & Interacts with dynein and has multiple functions including role in nuclear migration and differentiation & Miller Dieker syndrome: type 1 lissencephaly, pachygyria, subcortical band heterotopia (double cortex) \\ \midrule
+	\textit{DCX/Dbcn} & Xq22.3 & Microtubule-associated protein (MAP) & type 1 lissencephaly, pachygyria, subcortical band heterotopia (double cortex) \\ \midrule
+	\textit{RELN} & 7q22 & Extracellular matrix (ECM) molecule, reelin pathway & Lissencephaly with cerebellar hypoplasia \\ \midrule
+	\textit{VLDLR} & 9p24 & Low-density lipoprotein receptor, reelin pathway & Lissencephaly with cerebellar hypoplasia \\ \midrule
+	\textit{POMT1} & 9q34 & Protein \textit{o}-mannosyl-transferase 1 (glycosylation of \alpha-dystroglycan) & Walker-Warburg (HARD) syndrome \\ \midrule
+	\textit{POMT2} & 14q24.3 & Protein \textit{o}-mannosyl-transferase 2 (glycosylation of \alpha-dystroglycan) & Walker-Warburg syndrome \\ \midrule
+	\textit{POMGnT1} & 1p34 & Protein \textit{o}-mannose beta-1,2-n-acetyl-glucosaminyl-transferase & Muscle-eye-brain disease \\ \midrule
+	\textit{FKTN} (Fukutin) & 9q31 & Homology with glycoprotein-modifying enzyme & Fukuyama congenital muscular dystrophy (FCMD) with type 2 lissencephaly \\ \midrule
+	\textit{FLNA} & Xq28 & Filamin-1 (actin crosslinking phosphoprotein) & Bilateral periventricular nodular heterotopia (BPNH) \\ \midrule
+  	
+    \multicolumn{4}{l}{\bfseries~Genes with a role in cellular processes involved in neuronal and synaptic functions} \\ \midrule
+	\textit{FID1} & Xq27 & m-RNA-binding protein, role in translation, regulation by RhoGTPase pathways, postsynaptic localization & Fragile X syndrome \\ \midrule
+	\textit{FGD1} & Xp11.2 & RhoGEF protein (GTP exchange factor), activate Rac1 and Cdc42 & Aarskog-Scott syndrome \\ \midrule
+	\textit{PAK3} & Xq21.3 & P21-activated kinase 3; effector of Rac1 and Cdc42 & Nonsyndromic XLID \\ \midrule
+	\textit{ARHGEF6} & Xq26 & RhoGEF protein, integrin-mediated activation of Rac1 and Cdc42 & Nonsyndromic XLID \\ \midrule
+	\textit{OPHN1} & Xq12 & RhoGAP protein (negative control of RhoGTPases; stimulates GTPase  activity of RhoA, Rac1 and Cdc42; pre- andpostsynaptic localization & ID with cerebellar hypoplasia \\ \midrule
+	\textit{TM4SF2} & Xq11 & Member of the tetraspanin family, integrin mediated RhoGTPase pathway regulation & Nonsyndromic XLID \\ \midrule
+	\textit{NLGN4} & Xp22.3 & Member of the neuroligin family, role in synapse formation and activity; post synaptic localization & Nonsyndromic XLID, autism, Asperger syndrome \\ \midrule
+	\textit{DLG3} & Xq13.1 & Protein involved in postsynaptic density structures; postsynaptic localization & Nonsyndromic XLID \\ \midrule
+	\textit{GDI1} & Xq28 & Regulation of Rab4 and Rab5 activity, and of synaptic vesicle recycling; pre- and postsynaptic localization & Nonsyndromic XLID \\ \midrule
+	\textit{IL1RAPL} & Xp22.1 & Potential involvement in exocytosis and ion channel activity & Nonsyndromic XLID \\ \midrule
+  	
+    \multicolumn{4}{l}{\bfseries~Transcription signaling cascade, remodeling and transcription factors} \\ \midrule
+	\textit{NF1} & 17q11 & RasGAP function, involved in Ras/ERK/MAPK signaling transcription cascade; postsynaptic protein & Neurofibromatosis type 1 (NF1); ID present in 50\% NF1 individuals \\ \midrule
+	\textit{RSK2} & Xp22.2 & Serine-threonine protein kinase,phosphorylates CREB, involved in Ras/ERK/MAPK signaling cascade, present in the postsynaptic compartment & Coffin-Lowry syndrome (facial and skeletal anomalies) \\ \midrule
+	\textit{CDKL5} & Xp22.2 & Serine-threonine kinase (STK9), interacts with MECP2,potential implication in chromatin remodeling & Rett-like syndrome with infantile spasms \\ \midrule
+	\textit{CREBBP} & 16p13.3 & CREB (cAMP response element-binding protein 1) binding protein; chromatin remodeling factor involved in Ras/ERK/MAPK signaling cascade & Rubinstein–Taybi syndrome \\ \midrule
+	\textit{EP300} & 22q13.1 & Transcriptional coactivator similar to CREBBP,with potent histone acetyl transferase:chromatin-remodeling factor & Rubinstein–Taybi syndrome \\ \midrule
+	\textit{XNP} & Xq13 & Homology with DNA helicases of the SNF2/SWI2 family, chromatin-remodeling factor,regulation of gene expression & Large spectrum of phenotypes including ATRX syndrome \\ \midrule
+	\textit{MECP2} & Xq28 & Methyl-CpG-binding protein 2; chromatin remodeling factor,involved in a transcriptional silencer complex & Rett syndrome (female-specific syndrome)and nonsyndromic ID \\ \midrule
+	\textit{DNMT3B} & 20q11.2 & DNA methyl transferase 3B, involved in chromatin remodeling & ICF syndrome (immune deficiency associated with centromeric instability, facial dysmorphology and ID)\\ %\midrule
+	\textit{ARX} & Xp22.1 & Transcription factor of the aristaless homeoprotein-related proteins family & Large spectrum of ID phenotypes: XLAG (X-linked lissencephaly and abnormal genitalia); West syndrome, Partington syndrome; nonsyndromic ID \\ \midrule
+	\textit{JARID1C} & Xp11.2 & Transcription factor and chromatin remodeling & Spectrum of phenotypes: ID with microcephaly, short stature, epilepsy, facial anomalies and nonsyndromic ID \\ \midrule
+	\textit{FID2} & Xq28 & Potential transcription factor & Nonsyndromic ID \\ \midrule
+	\textit{SOX3} & Xq27 & SRY-BOX 3: transcription factor & Isolated GH deficiency, short stature and ID \\ \midrule
+	\textit{PHF8} & Xp11.2 & PHD zinc-finger protein, potential role in transcription & ID with cleft lip or palate \\ \midrule
+	\textit{ZNF41} & Xp11.2 & Potential transcription factor & Nonsyndromic ID \\ \midrule
+	\textit{GTF2I/GTF2RD1} & 7q11.23 & Transcription factors, potential regulator of c-Fos and immediate-early gene expression & Williams syndrome \\ \midrule
+	\textit{PHF6} & Xq26 & Homeodomain-like transcription factor & Börjeson–Forssman–Lehmann syndrome \\ \midrule
+    
+    \multicolumn{4}{l}{\bfseries~Other genes involved in ID} \\ \midrule
+	\textit{RPSS12} & 4q24 & Member of the trypsin-like serine protease family, enriched in the presynaptic compartment & Nonsyndromic autosomal recessive (AR) ID \\ \midrule
+	\textit{CRBN} & 3p25 & ATP-dependent protease; regulation of mitochondrial energy metabolism & Nonsyndromic ARID \\ \midrule
+	\textit{CC2D1A} & 19p13 & Unknown function, protein contains C2 and DM14 domains & Nonsyndromic ARID \\ \midrule
+	\textit{FTSJ1} & Xq11.2 & Role in tRNA modification and IDNA translation & Nonsyndromic XLID \\ \midrule
+	\textit{PQBP1} & Xq11.2 & Polyglutamine-binding protein, potentially involved in pre-mRNA splicing & Large spectrum of ID phenotypes including nonsyndromic ID \\ \midrule
+	\textit{FACL4} & Xq22.3 & Fatty-acid synthase-CoA ligase 4; possible role in membrane synthesis and/or recycling & Nonsyndromic XLID \\ \midrule
+	\textit{SLC6A8} & Xq28 & Creatine transporter, role in homeostasis of creatine in the brain & Creatine deficiency syndrome and nonsyndromic ID \\ \midrule
+	\textit{OCRL1} & Xq25 & Inositol polyphosphate 5-phosphatase (central domain) and RHoGAP-like C-terminal domain & Lowe syndrome \\ \midrule
+	\textit{AGTR2} & Xq24 & Angiotensin II receptor type 2, signaling pathway & Nonsyndromic XLID \\ \midrule
+	\textit{SLC16A2} & Xq13.2 & Monocarbohydrate transporter, T3 transporter & Severe syndromic form ID with abnormal levels of thyroid hormones \\ \midrule
+	\textit{SMS} & Xp22.1 & Sperimin synthase, CNS development/function (neuron excitability) & Snyder–Robinson syndrome \\ \midrule
+	\textit{UBE3A} & 15q11 & Ubiquitin-protein ligase E3A; protein degradation (proteasome): CNS development/function (neuron differentiation) & Angelman syndrome \\
+		\end{longtable}
+        \end{spacing}
+	\end{landscape}
+\clearpage% Flush page
+}
