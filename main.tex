@@ -114,6 +114,14 @@ cmyk
 	{\titlerule \Huge} % before
 	[\vspace*{\fill} \thispagestyle{empty} \clearpage \addtocounter{page}{-1}]% after
 
+\titleformat{name=\chapter,numberless}[display] % command + shape
+	{\normalfont \Large \filcenter \rmfamily} % format
+	{\vspace*{\fill} \titlerule[1pt] \vspace{1pt} \titlerule \vspace{1pc}
+		 \LARGE\MakeUppercase{\chaptertitlename}~\thechapter}% label
+	{1pc}% separation
+	{\titlerule \Huge} % before
+	[\vspace*{\fill} \thispagestyle{empty} \clearpage \addtocounter{page}{-1}]% after
+
   
  \titleformat{\section}
   {\normalfont\rmfamily\bfseries}
@@ -270,7 +278,9 @@ cmyk
 %\begin{abstract}
 %\addchaptertocentry{\abstractname} % Add the abstract to the table of contents
 
+\begin{alttitles}
 \input{Chapters/Abstract}
+\end{alttitles}
 
 %\end{abstract}
 
